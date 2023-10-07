@@ -1,25 +1,39 @@
-import logo from './logo.svg';
+import React, { Component } from 'react'
+import AnimatedToast from './Components/AnimatedToast/AnimatedToast';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
-export default App;
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.childRef = React.createRef();
+  }
+
+  showToast() {
+    this.childRef.current.launch_toast("toast with ref");
+  }
+
+  componentDidMount() {
+    this.showToast();
+  }
+
+  render() {
+    return (
+      <div className="App">
+        {/* 
+          TODO: indeed props for AnimatedToast
+          type: success, failure, warning, info
+          icon
+          background-color
+          color (text color)
+          border-radius
+          duration: short, normal, long
+          width
+
+        */}
+        <AnimatedToast type="info" imgAlt="testAlt" message="Input Data is incorrect" ref={this.childRef} />
+        <button onClick={this.showToast.bind(this)}>Show Toast</button>
+      </div>
+    )
+  }
+}
