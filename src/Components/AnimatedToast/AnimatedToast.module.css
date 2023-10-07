@@ -43,13 +43,20 @@
 
     overflow: hidden;
     white-space: nowrap;
+    opacity: 0;
 }
 
 .toast.show {
     visibility: visible;
-    -webkit-animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
-    animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+    -webkit-animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s forwards;
+    animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s forwards;
 }
+
+.toast.show .desc {
+    -webkit-animation: showText 0.5s 0.5s forwards, hideText 0.5s 4s forwards;
+    animation: showText 0.5s 0.5s forwards, hideText 0.5s 4s forwards;
+}
+
 
 .success {
     background-color: #28a745;
@@ -171,6 +178,58 @@
 
     to {
         bottom: 60px;
+        opacity: 0;
+    }
+}
+
+@keyframes holdText {
+    from {}
+
+    to {}
+}
+
+@-webkit-keyframes holdText {
+    from {}
+
+    to {}
+}
+
+@keyframes showText {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes showText {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes hideText {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes hideText {
+    from {
+        opacity: 1;
+    }
+
+    to {
         opacity: 0;
     }
 }

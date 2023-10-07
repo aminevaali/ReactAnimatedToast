@@ -31,7 +31,7 @@ export default class App extends Component {
           width
 
         */}
-        <AnimatedToast type="info" imgAlt="testAlt" message="Input Data is incorrect" ref={this.childRef} />
+        <AnimatedToast type="success" imgAlt="testAlt" message="Input Data is incorrect" ref={this.childRef} />
         <button onClick={this.showToast.bind(this)}>Show Toast</button>
       </div>
     )
