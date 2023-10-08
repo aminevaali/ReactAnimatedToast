@@ -3,4 +3,4 @@
 This project helps you create beautiful animated Toast messages in your react app
 
 ## Appearance
-![Success toast message]('imgs/success.png)
+![Success toast message]('./imgs/success.png)
