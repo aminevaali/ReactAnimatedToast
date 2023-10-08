@@ -14,8 +14,8 @@ import AnimatedToast from './Components/AnimatedToast/AnimatedToast.jsx';
 ### Create a ref in parent component that you want to add AnimatedToast
 ```javascript
 constructor(props) {
-super(props);
-this.toastRef = React.createRef();
+  super(props);
+  this.toastRef = React.createRef();
 }
 ```
 
