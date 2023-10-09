@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import AnimatedToast from './Components/AnimatedToast/AnimatedToast';
 import './App.css';
+import blink_icon from './blink_icon.svg'
 
 
 export default class App extends Component {
@@ -10,7 +11,7 @@ export default class App extends Component {
   }
 
   showToast() {
-    this.childRef.current.launch_toast("toast with ref");
+    this.childRef.current.launch_toast("Toast launched successfully :)");
   }
 
   componentDidMount() {
@@ -22,8 +23,7 @@ export default class App extends Component {
       <div className="App">
         {/* 
           TODO: indeed props for AnimatedToast
-          type: success, failure, warning, info
-          icon
+          icon tint
           background-color
           color (text color)
           border-radius
@@ -31,7 +31,9 @@ export default class App extends Component {
           width
 
         */}
-        <AnimatedToast type="success" imgAlt="testAlt" message="Input Data is incorrect" ref={this.childRef} />
+        <AnimatedToast type="success" imgAlt="testAlt"
+         message="Input Data is incorrect" ref={this.childRef}
+         icon={blink_icon} />
         <button onClick={this.showToast.bind(this)}>Show Toast</button>
       </div>
     )
