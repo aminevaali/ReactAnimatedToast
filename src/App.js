@@ -33,7 +33,7 @@ export default class App extends Component {
         */}
         <AnimatedToast type="success" imgAlt="testAlt"
          message="Input Data is incorrect" ref={this.childRef}
-         icon={blink_icon} />
+         icon={blink_icon} backgroundColor='magenta'/>
         <button onClick={this.showToast.bind(this)}>Show Toast</button>
       </div>
     )
