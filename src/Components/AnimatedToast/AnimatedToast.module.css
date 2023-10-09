@@ -66,8 +66,16 @@
     background-color: #dc3545;
 }
 
+.failure .desc {
+    color: black;
+}
+
 .warning {
     background-color: #ffc107;
+}
+
+.warning .desc {
+    color: black;
 }
 
 .info {

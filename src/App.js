@@ -24,16 +24,17 @@ export default class App extends Component {
         {/* 
           TODO: indeed props for AnimatedToast
           icon tint
-          background-color
           color (text color)
           border-radius
           duration: short, normal, long
           width
-
+          font size
         */}
-        <AnimatedToast type="success" imgAlt="testAlt"
-         message="Input Data is incorrect" ref={this.childRef}
-         icon={blink_icon} backgroundColor='magenta'/>
+        <AnimatedToast 
+         message="Input Data is incorrect" ref={this.childRef} // This props are required and other props are optional
+         type="info" imgAlt="testAlt" 
+         icon={blink_icon} backgroundColor="magenta" textColor='black'/>
+
         <button onClick={this.showToast.bind(this)}>Show Toast</button>
       </div>
     )
