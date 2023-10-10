@@ -37,7 +37,7 @@ export default class AnimatedToast extends Component {
         return (
             <div className={`${styles.toast} ${styles[this.props.type]}`}
                 style={{ backgroundColor: this.props.backgroundColor, borderRadius: this.props.borderRadius }}>
-                <img alt={this.props.imgAlt ? this.props.imgAlt : "toast img"} src={icon} className={styles.img} />
+                <img alt='Toast message icon' src={icon} className={styles.img} />
                 <div className={styles.desc} style={{ color: this.props.textColor }}></div>
             </div>
         )

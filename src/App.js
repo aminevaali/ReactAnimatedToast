@@ -30,7 +30,7 @@ export default class App extends Component {
         */}
         <AnimatedToast 
          message="Input Data is incorrect" ref={this.childRef} // This props are required and other props are optional
-         type="info" imgAlt="testAlt" 
+         type="info" 
          icon={blink_icon} backgroundColor="magenta" textColor='black' borderRadius="25px"/>
 
         <button onClick={this.showToast.bind(this)}>Show Toast</button>
