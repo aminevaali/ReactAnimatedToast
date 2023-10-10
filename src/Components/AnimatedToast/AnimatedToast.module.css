@@ -16,6 +16,8 @@
     bottom: 30px;
     font-size: 17px;
     white-space: nowrap;
+    display: flex;
+    align-items: center;
 }
 
 .toast .img {
@@ -55,6 +57,8 @@
 .toast.show .desc {
     -webkit-animation: showText 0.5s 0.5s forwards, hideText 0.5s 4s forwards;
     animation: showText 0.5s 0.5s forwards, hideText 0.5s 4s forwards;
+    width: 100%;
+    vertical-align: center;
 }
 
 
