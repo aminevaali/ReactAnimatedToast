@@ -50,17 +50,35 @@
 
 .toast.show {
     visibility: visible;
-    -webkit-animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s forwards;
-    animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s forwards;
+    -webkit-animation: fadein 0.5s, expand 0.5s 0.5s forwards, shrink 0.5s 3.5s forwards, fadeout 0.5s 4s forwards;
+    animation: fadein 0.5s, expand 0.5s 0.5s forwards, shrink 0.5s 3.5s forwards, fadeout 0.5s 4s forwards;
 }
 
 .toast.show .desc {
-    -webkit-animation: showText 0.5s 0.5s forwards, hideText 0.5s 4s forwards;
-    animation: showText 0.5s 0.5s forwards, hideText 0.5s 4s forwards;
+    -webkit-animation: showText 0.5s 0.5s forwards, hideText 0.5s 3.5s forwards;
+    animation: showText 0.5s 0.5s forwards, hideText 0.5s 3.5s forwards;
     width: 100%;
-    vertical-align: center;
 }
 
+.toast.show.long {
+    -webkit-animation: fadein 0.5s, expand 0.5s 0.5s forwards, shrink 0.5s 5s forwards, fadeout 0.5s 5.5s forwards;
+    animation: fadein 0.5s, expand 0.5s 0.5s forwards, shrink 0.5s 5s forwards, fadeout 0.5s 5.5s forwards;
+}
+
+.toast.show.long .desc {
+    -webkit-animation: showText 0.5s 0.5s forwards, hideText 0.5s 5s forwards;
+    animation: showText 0.5s 0.5s forwards, hideText 0.5s 5s forwards;
+}
+
+.toast.show.short {
+    -webkit-animation: fadein 0.5s, expand 0.5s forwards, shrink 0.5s 2.5s forwards, fadeout 0.5s 2.5s ease-in forwards;
+    animation: fadein 0.5s, expand 0.5s forwards, shrink 0.5s 2.5s forwards, fadeout 0.5s 2.5s ease-in forwards;
+}
+
+.toast.show.short .desc {
+    -webkit-animation: showText 0.5s 0.25s forwards, hideText 0.5s 2.5s forwards;
+    animation: showText 0.5s 0.25s forwards, hideText 0.5s 2.5s forwards;
+}
 
 .success {
     background-color: #28a745;
@@ -123,26 +141,6 @@
 @keyframes expand {
     from {
         min-width: 50px
-    }
-
-    to {
-        min-width: 350px
-    }
-}
-
-@-webkit-keyframes stay {
-    from {
-        min-width: 350px
-    }
-
-    to {
-        min-width: 350px
-    }
-}
-
-@keyframes stay {
-    from {
-        min-width: 350px
     }
 
     to {

@@ -23,10 +23,11 @@ export default class App extends Component {
       <div className="App">
         {/* 
           TODO: indeed props for AnimatedToast
+          toast icon margin left
+          disabling launch_toast method when a message is already shown
+          borderRadius default value
           icon tint
-          duration: short, normal, long
           width
-          font size
         */}
         <AnimatedToast
           message="Input Data is incorrect" ref={this.childRef} // This props are required and other props are optional
@@ -36,6 +37,7 @@ export default class App extends Component {
           textColor='black'
           borderRadius="25px"
           fontSize='18px'
+          duration='normal'
         />
 
         <button onClick={this.showToast.bind(this)}>Show Toast</button>
