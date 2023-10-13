@@ -26,7 +26,6 @@ export default class App extends Component {
           TODO: indeed props for AnimatedToast
           toast icon margin left
           adding queue to the component to handle conflicts while showing toasts
-          borderRadius default value
           icon tint
           width
         */}
@@ -36,7 +35,7 @@ export default class App extends Component {
           icon={blink_icon}
           backgroundColor="magenta"
           textColor='black'
-          borderRadius="25px"
+          borderRadius="28px"
           fontSize='18px'
           duration='normal'
         />

@@ -22,7 +22,8 @@ export default class AnimatedToast extends Component {
     
 
     static defaultProps = {
-        duration: 'normal'
+        duration: 'normal',
+        borderRadius: '25px'
     }
 
     launch_toast(message) {
