@@ -11,7 +11,8 @@ export default class App extends Component {
   }
 
   showToast() {
-    this.childRef.current.launch_toast("Toast launched successfully :)");
+    const status = this.childRef.current.launch_toast("Toast launched successfully :)");
+    console.log(status);
   }
 
   componentDidMount() {
@@ -24,7 +25,7 @@ export default class App extends Component {
         {/* 
           TODO: indeed props for AnimatedToast
           toast icon margin left
-          disabling launch_toast method when a message is already shown
+          adding queue to the component to handle conflicts while showing toasts
           borderRadius default value
           icon tint
           width

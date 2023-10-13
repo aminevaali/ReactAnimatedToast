@@ -9,21 +9,36 @@ import info_icon from './imgs/info.svg'
 
 export default class AnimatedToast extends Component {
 
-    durationTimes = {
-        short: 3000, // ms
-        normal: 4500, // ms
-        long: 6000 // ms
+    constructor(props){
+        super(props);
+        this.durationTimes = {
+            short: 3000, // ms
+            normal: 4500, // ms
+            long: 6000 // ms
+        }
+    
+        this.messageIsShown = false;
     }
+    
 
     static defaultProps = {
         duration: 'normal'
     }
 
     launch_toast(message) {
+        if(this.messageIsShown) {
+            return false; // false means error because another toast is shown already
+        }
+        this.messageIsShown = true;
         var x = document.getElementsByClassName(styles.toast)[0]
         x.classList.add(styles.show);
         document.getElementsByClassName(styles.desc)[0].innerHTML = message
-        setTimeout(function () { x.className = x.className.replace(styles.show, ""); }, this.durationTimes[this.props.duration]);
+        setTimeout(function () { 
+            x.className = x.className.replace(styles.show, ""); 
+            this.messageIsShown = false;
+        }.bind(this), this.durationTimes[this.props.duration]);
+
+        return true; // true means toast showed successfully
     }
 
     render() {
