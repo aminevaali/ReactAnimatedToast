@@ -24,7 +24,6 @@ export default class App extends Component {
       <div className="App">
         {/* 
           TODO: indeed props for AnimatedToast
-          toast icon margin left
           adding queue to the component to handle conflicts while showing toasts
           icon tint
           width
